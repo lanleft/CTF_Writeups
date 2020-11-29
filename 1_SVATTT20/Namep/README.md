@@ -16,9 +16,9 @@ Given File: ` Namep.exe`
 
 #### Phân tích file exe:
 
-![name1](D:\13_CTF_Writeups\1_SVATTT20\Namep\name1.png)Trong  hàm `DialogFunc` bắt đầu bằng hàm `decrypt_RC()` và sau đó là `create_Pipe`
+![name1](1_SVATTT20\Namep\name1.png)Trong  hàm `DialogFunc` bắt đầu bằng hàm `decrypt_RC()` và sau đó là `create_Pipe`
 
-![name3](D:\13_CTF_Writeups\1_SVATTT20\Namep\name3.png)Hàm `decrypt_RC()` lấy  load resource sau đó `xor` các byte với giá trị của byte số 0 trong RC
+![name3](1_SVATTT20\Namep\name3.png)Hàm `decrypt_RC()` lấy  load resource sau đó `xor` các byte với giá trị của byte số 0 trong RC
 
 ![name4](D:\13_CTF_Writeups\1_SVATTT20\Namep\name4.png)Hàm `create_Pipe()` tạo ra một `pipe` để giao tiếp giữa client và server 
 
