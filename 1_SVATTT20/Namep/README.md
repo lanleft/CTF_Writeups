@@ -45,7 +45,7 @@ print ("done")
 
  view decrypt file bằng `hex_editor`  --> khả năng là `shellcode`![name6](name6.png)
 
-Viết script đơn giản bằng c để load được shellcode
+Viết script đơn giản để load được shellcode
 
 ```c
 #include <Windows.h>
