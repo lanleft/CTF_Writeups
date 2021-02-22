@@ -2,7 +2,7 @@
 
 ### **Description:**
 
-![image0](images\\image0.png)
+![image0](images/image0.png)
 
 ### **Part 1: powershell file analysis**
 
