@@ -39,7 +39,7 @@ receive data until  `size == 0x6B200`:
 
 The downloaded file will be Injected into IE, this Inject technique is quite similar [link](https://www.ired.team/offensive-security/code-injection-process-injection/injecting-to-remote-process-via-thread-hijacking)
 
-### **Part 3: phân tích file `out.exe`**
+### **Part 3: file `out.exe`**
 
 The file will look in the folder `Document` file plaintext:
 
