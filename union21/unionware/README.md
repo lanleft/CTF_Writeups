@@ -63,7 +63,7 @@ Struct file:
 
 Writing a simple script to recover the original file is going to have the `flag`.
 
-All file `.idb` and script i used in `files folder`.
+All file `.idb` and scripts i used in `files folder`.
 
 ### Reference
 
