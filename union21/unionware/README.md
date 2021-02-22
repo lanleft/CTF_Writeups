@@ -62,6 +62,7 @@ Struct file:
 - The other is the ciphert text
 
 Writing a simple script to recover the original file is going to have the `flag`.
+All file `.idb` and script i used in `files folder`.
 
 ### Reference
 
