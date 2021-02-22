@@ -2,7 +2,7 @@
 
 ### **Description:**
 
-![image0](images\image0.png)
+![image0](\images\image0.png)
 
 ### **Part 1: powershell file analysis**
 
@@ -12,7 +12,7 @@ This is an obfuscate form of powershell, used `spit()` . Write scripts to get co
 
 At the beginning of the file there is `checkVM` function and some other checks, I choose next directly through these checks.
 
-![image1](images\image1.png)
+![image1](\images\image1.png)
 
 Enter `conn`  function, because the file used `xor obfuscate`, I debug to know function to be called, explain to `conn`:
 
