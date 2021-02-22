@@ -35,7 +35,7 @@ v6 = ((int (__cdecl *)(int, int *, int, int))ws2_32_WSAStartup(514, &v40, a3, a4
 
 receive data until  `size == 0x6B200`:
 
-![image2](images\\image2.png)
+![image2](images/image2.png)
 
 The downloaded file will be Injected into IE, this Inject technique is quite similar [link](https://www.ired.team/offensive-security/code-injection-process-injection/injecting-to-remote-process-via-thread-hijacking)
 
