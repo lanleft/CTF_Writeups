@@ -12,7 +12,7 @@ This is an obfuscate form of powershell, used `spit()` . Write scripts to get co
 
 At the beginning of the file there is `checkVM` function and some other checks, I choose next directly through these checks.
 
-![image1](images\\image1.png)
+![image1](images/image1.png)
 
 Enter `conn`  function, because the file used `xor obfuscate`, I debug to know function to be called, explain to `conn`:
 
@@ -50,11 +50,11 @@ The file will look in the folder `Document` file plaintext:
 
 process `encrypt data`:
 
-![image3](images\\image3.png)
+![image3](images/image3.png)
 
 Enter `encrypt`  function, we will see many functions that define the functions in the `cryptopp` library, and then create `key 128bytes` by `random` function with seed at the time of `encrypt` :
 
-![image4](images\\image4.png)
+![image4](images/image4.png)
 
 Struct file:
 
