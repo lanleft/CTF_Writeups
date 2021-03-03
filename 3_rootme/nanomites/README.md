@@ -311,7 +311,7 @@ for idx in range(len(sigtrap)):
 
 ### Bên lề
 
-Đầu tiên mình định dùng `ptrace_hook` nhưng bị lỗi `./ch29.bin: symbol lookup error: ./ptrace_hook.so: undefined symbol: dlsym` mà đến giờ mình chưa fix được :<
+Đầu tiên mình định dùng `ptrace_hook` nhưng bị lỗi `./ch29.bin: symbol lookup error: ./ptrace_hook.so: undefined symbol: dlsym`. Đã hiểu tại sao lại có lỗi đó rồi :))), cảm ơn `midas` 
 
 ```c
 long int (*orig_ptrace)(void* request, pid_t pid, void *addr, void *data);
