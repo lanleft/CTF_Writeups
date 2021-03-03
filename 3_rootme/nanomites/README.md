@@ -60,7 +60,7 @@ if ( (unsigned __int8)stat_loc == 127 )
 {
   switch ( BYTE1(stat_loc) )
   {
-    case 8u: // không rõ lắm
+    case 8u: // SIGFPE
       ...
     case 11u: // SIGSEGV
       ...
