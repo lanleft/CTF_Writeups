@@ -77,7 +77,7 @@ Hàm này `fork()` một process khác và control nó qua đoạn code ở trê
 5 --> SIGTRAP: Trace/breakpoint trap (là opcode 0xCC hay disasm là int3)
 ```
 
-Để ý trong đoạn `asm` bên trên có `mov     rax, ds:0DEADBEEFh` chính là tại đây, chương trình con sẽ trả về giá trị `SIGSEGV` , và khi chương trình con gặp `int3` nó sẽ trả về `SIGTRAP` 
+Để ý trong đoạn `asm` bên trên có `mov     rax, ds:0DEADBEEFh` chính là tại đây, chương trình con sẽ trả về giá trị `SIGSEGV` , và khi chương trình con gặp `int3` nó sẽ trả về `SIGTRAP`. Một số signal khác [link](https://man7.org/linux/man-pages/man7/signal.7.html)
 
 ### Part3:
 
