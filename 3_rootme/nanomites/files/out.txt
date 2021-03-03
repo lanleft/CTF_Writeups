@@ -1,0 +1,65 @@
+
+.rodata:0000000000400C60    xor     rcx, rcx
+.rodata:0000000000400C63    mov     rax, [rdi]
+.rodata:0000000000400C66    add     rdi, 8
+.rodata:0000000000400C6A    mov     rbx, 7FFF427749597942h
+.rodata:0000000000400C74    xor     rax, rbx
+.rodata:0000000000400C77    mov     rcx, 2349236485811423500h
+.rodata:0000000000400C81    cmp     rax, rcx
+.rodata:0000000000400C84    jz      400C99h               ; Trap to Debugger
+.rodata:0000000000400C85    nop
+.rodata:0000000000400C86    jnz     400CB4h               ; Trap to Debugger
+.rodata:0000000000400C87    nop
+.rodata:0000000000400C88    mov     rcx, 834906561707513639h
+.rodata:0000000000400C92    cmp     rax, rcx
+.rodata:0000000000400C95    jnz     400CE3h               ; Trap to Debugger
+.rodata:0000000000400C96    nop
+.rodata:0000000000400C97    jz      400CC5h               ; Trap to Debugger
+.rodata:0000000000400C98    nop
+.rodata:0000000000400C99    mov     rax, [rdi]
+.rodata:0000000000400C9C    add     rdi, 8
+.rodata:0000000000400CA0    xor     rax, rbx
+.rodata:0000000000400CA3    mov     rcx, 977299983414662404h
+.rodata:0000000000400CAD    cmp     rax, rcx
+.rodata:0000000000400CB0    jz      400CC5h               ; Trap to Debugger
+.rodata:0000000000400CB1    nop
+.rodata:0000000000400CB2    jnz     400C88h               ; Trap to Debugger
+.rodata:0000000000400CB3    nop
+.rodata:0000000000400CB4    mov     rcx, 1483423714029606438h
+.rodata:0000000000400CBE    cmp     rax, rcx
+.rodata:0000000000400CC1    jnz     400CE3h               ; Trap to Debugger
+.rodata:0000000000400CC2    nop
+.rodata:0000000000400CC3    jz      400C99h               ; Trap to Debugger
+.rodata:0000000000400CC4    nop
+.rodata:0000000000400CC5    xor     rax, rax
+.rodata:0000000000400CC8    mov     ax, [rdi]
+.rodata:0000000000400CCB    add     rax, 9999h
+.rodata:0000000000400CD1    cmp     rax, 1130Bh
+.rodata:0000000000400CD7    jz      400CE3h               ; Trap to Debugger
+.rodata:0000000000400CD8    nop
+.rodata:0000000000400CD9    jnz     400CDBh               ; Trap to Debugger
+.rodata:0000000000400CDA    nop
+.rodata:0000000000400CDB    cmp     ax, 0D8FEh
+.rodata:0000000000400CDF    jnz     400CE3h               ; Trap to Debugger
+.rodata:0000000000400CE0    nop
+.rodata:0000000000400CE1    jmp     400D05h               ; Trap to Debugger
+.rodata:0000000000400CE2    nop
+.rodata:0000000000400CE3    xor     rax, rax
+.rodata:0000000000400CE6    inc     al
+.rodata:0000000000400CE8    mov     edi, 1
+.rodata:0000000000400CED    mov     rsi, offset aWrong ; "Wrong."
+.rodata:0000000000400CF7    mov     edx, 5
+.rodata:0000000000400CFC    syscall                 ; LINUX - sys_write
+.rodata:0000000000400CFE    mov     al, 3Ch ; '<'
+.rodata:0000000000400D00    xor     rdi, rdi
+.rodata:0000000000400D03    syscall                 ; LINUX - sys_exit
+.rodata:0000000000400D05    xor     rax, rax
+.rodata:0000000000400D08    inc     al
+.rodata:0000000000400D0A    mov     edi, 1
+.rodata:0000000000400D0F    mov     rsi, offset aGood ; "Good."
+.rodata:0000000000400D19    mov     edx, 5
+.rodata:0000000000400D1E    syscall                 ; LINUX - sys_write
+.rodata:0000000000400D20    mov     al, 3Ch ; '<'
+.rodata:0000000000400D22    xor     rdi, rdi
+.rodata:0000000000400D25    syscall
+
