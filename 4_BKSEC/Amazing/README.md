@@ -6,7 +6,7 @@ Description:
 
 [file](files/chall)
 
-Category: `reverse engineering`
+Category: `re + crypto`
 
 format: BKSEC{...}
 
