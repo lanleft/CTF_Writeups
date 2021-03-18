@@ -2,7 +2,7 @@
 
 Description: 
 
-*Do you like large integer? Do you like crypto? I love all of them.*
+*Do you like large integers? Do you like crypto? I love all of them.*
 
 [file](files/chall)
 
