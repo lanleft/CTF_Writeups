@@ -2,7 +2,7 @@
 
 ### Description
 
-![dc](images\1.png)
+![dc](images/1.png)
 
 ### Solution
 
