@@ -86,7 +86,7 @@ Nhưng mình nhận ra, sẽ có một đường đi chung (của các file đư
 
 Đầu tiên, mình sẽ đi đến `DllEntryPoint` của file dll này:
 
-![2](images\2.png)
+![2](images/2.png)
 
 IDA thường sẽ tìm được `DllEntryPoint` các các file dll
 
