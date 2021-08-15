@@ -15,7 +15,7 @@ UAF ở hàm *Unlink* .
 
 [Script](b.py)
 
-*Scipt cồng kềnh vler*  :'< 
+*Script cồng kềnh vler*  :'< 
 
 
 
