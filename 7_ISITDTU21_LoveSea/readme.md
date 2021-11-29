@@ -102,7 +102,7 @@ int __cdecl sub_10008C50(int a1, A1 *a2, int a3, int a4, int a5)
 
 Parse phần header
 
-![2](imgs/2.png)
+![2](imgs\2.png)
 
 ```c
 size_t __thiscall sub_10008C10(int *this)
