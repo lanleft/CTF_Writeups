@@ -124,7 +124,7 @@ int __cdecl asign_12bytes(A1 *lua_bytecode)
 
 Tiếp đến phần body
 
-![3](imgs/3.png)
+![3](imgs\3.png)
 
 ```c
 size_t __cdecl encode_bodylua(A1 *lua_bytecode, int a2, int *a3)
