@@ -102,7 +102,7 @@ int __cdecl sub_10008C50(int a1, A1 *a2, int a3, int a4, int a5)
 
 Parse phần header
 
-![2](imgs\2.png)
+![2](imgs/2.png)
 
 ```c
 size_t __thiscall sub_10008C10(int *this)
@@ -124,7 +124,7 @@ int __cdecl asign_12bytes(A1 *lua_bytecode)
 
 Tiếp đến phần body
 
-![3](imgs\3.png)
+![3](imgs/3.png)
 
 ```c
 size_t __cdecl encode_bodylua(A1 *lua_bytecode, int a2, int *a3)
