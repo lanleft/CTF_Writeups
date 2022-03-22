@@ -1,4 +1,4 @@
-# Cách làm `Flag-Checker`
+# Flag-Checker
 
 *Cuối tuần trước, team mình có chơi giải zer0pts CTF. Cả giải mình và 1 bạn cùng team chỉ làm mỗi bài này, hơi buồn nhưng sau bài này mình đã học thêm được rất nhiều, cảm ơn tác giả vì chall gồm rất nhiều kiến thức*
 
