@@ -872,6 +872,6 @@ void main_process()
 
 ## Kết thúc
 
-Chúng mình không solve được hoàn toàn challenge, chúng mình đã từ bỏ ở bước rev hàm `gen_primes` và lấy data từ file `PNG` . 
+Chúng mình không solve được hoàn toàn challenge, chúng mình đã từ bỏ ở bước rev hàm `gen_primes` và lấy flag từ file `PNG` . 
 
 Buồn++
