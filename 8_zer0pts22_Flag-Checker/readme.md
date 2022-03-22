@@ -254,7 +254,7 @@ __int64 __fastcall fn_CODE(__int64 a1)
 }
 ```
 
-...
+Có thể ở hàm này, chương trình lưu `inp` vào một biến `global` (cái này mình không chắc chắn lắm).
 
 ---
 
@@ -827,9 +827,11 @@ Tiếp theo đó, chương trình sẽ xử lý những data trong file PNG qua 
 }
 ```
 
+Đến đoạn này, đi vào 2 hàm xử lý data PNG là `sub_37830` và `sub_3D750` mình đã bỏ cuộc tại đây (vì code strip nhiều, đọc rối quá :<). Sau giải mình thấy có team đã `rev` nó và chức năng của nó là:
 
+![img6](imgs/6.png)
 
-
+Thật khâm phục luôn!!!!
 
 ####  Rev golang file
 
@@ -840,8 +842,36 @@ Trong file golang, tại hàm `main_init_0`, chương trình sẽ lấy handle c
   main_g_func3_r = GetCurrentProcessId;
 ```
 
-Tại `main_main`, chương trình chọn random một process, và sau đó tạo một struct gửi lại cho 
+Tại `main_main`, chương trình chọn random một process, và sau đó tạo một struct gửi lại cho chương trình `anime` thông qua `pipe` đã được tạo trước đó. 
 
 ```cpp
+struct DATA_GO {
+    int id=2;
+    int pid=xx;
+    int tid=xx;
+    char byte_data=xx; // <-- pointer to flag characters
+   //... or maybe something (just rev static only in golang file :< )
+}
 ```
 
+**ID=2**
+
+Chương trình gọi đến hàm `FN_12345678`, chắc là trong hàm này, chương trình sẽ kiểm tra `input` và giá trị byte nhận được từ `go` file. 
+
+```cpp
+void main_process()
+{
+// truncated...
+  id_2 = 2;
+  handle_func(v12, &id_2, FN_12345678);
+// truncated...
+}
+```
+
+
+
+## Kết thúc
+
+Chúng mình không solve được hoàn toàn challenge, chúng mình đã từ bỏ ở bước rev hàm `gen_primes` và lấy data từ file `PNG` . 
+
+Buồn++
