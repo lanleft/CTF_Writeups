@@ -1,6 +1,6 @@
 # Netatalk
 
-# Netatalk là gì?
+## Netatalk là gì?
 
 `Netatalk` là một open-source linux deamon, cung cấp POSIX-compliant *NIX/ * BSD hệ thống có khả năng chia sẻ các tập tin với các máy tính Apple Macintonsh.
 
@@ -13,7 +13,7 @@
 > Hiểu một cách đơn giản, `Netatalk` là một ứng dụng giúp chúng ta chia sẻ file qua mạng giữa hệ thống `Ubuntu`  và hệ thống `MacOS` bằng cách cung cấp cùng giao thức `AFP`
 > 
 
-# Setup the environment
+## Setup the environment
 
 For Ubuntu18.04 (`Linux ubuntu 4.15.0-20-generic #21-Ubuntu SMP Tue Apr 24 06:16:15 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux`)
 
@@ -110,7 +110,7 @@ And then
 
 ![imgs/Netatalk//Untitled%204.png](imgs/Netatalk//Untitled%204.png)
 
-# Code analysis
+## Code analysis
 
 After search google, I found that bug in `dsi_opensess.c` [link](https://medium.com/tenable-techblog/exploiting-an-18-year-old-bug-b47afe54172)
 
@@ -454,23 +454,23 @@ fork() —> memory unchange —> disable ASRL
 Ngâm cứu-ing :<
 
 
-# References
+### References
 
-### Some informations about Netatalk
+*Some informations about Netatalk*
 
 [Netatalk/Netatalk](https://github.com/Netatalk/Netatalk/blob/2e7f3cb25f1f4eb8ee0e5cbec1ed7bd40bca9031/libatalk/dsi/dsi_opensess.c)
 
 [Data Stream Interface - Wikipedia](https://en.wikipedia.org/wiki/Data_Stream_Interface)
 
-### Explained attack by author 0xddaa
+*Explained attack by author 0xddaa*
 
 [Hitcon ctf 2019 pwn 371 netatalk](https://ddaa.tw/hitconctf_pwn_371_netatalk.html)
 
-### Out of bound write
+*Out of bound write*
 
 [Exploiting an 18 Year Old Bug](https://medium.com/tenable-techblog/exploiting-an-18-year-old-bug-b47afe54172)
 
-### Others
+*Others*
 
 [HITCON CTF 2019 Quals](https://balsn.tw/ctf_writeup/20191012-hitconctfquals/#netatalk)
 
@@ -478,6 +478,6 @@ Ngâm cứu-ing :<
 
 [struct - Interpret bytes as packed binary data - Python 3.9.5 documentation](https://docs.python.org/3/library/struct.html)
 
-### Đặt break point tại line xx trong file c
+*Đặt break point tại line xx trong file c*
 
 [Debugging with GDB - Set Breaks](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_28.html)
