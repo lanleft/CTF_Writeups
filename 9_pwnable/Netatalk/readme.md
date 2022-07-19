@@ -1,36 +1,5 @@
 # Netatalk
 
-Date Created: May 17, 2021 4:41 PM
-Status: 4->5->6
-
-# References
-
-### Some informations about Netatalk
-
-[Netatalk/Netatalk](https://github.com/Netatalk/Netatalk/blob/2e7f3cb25f1f4eb8ee0e5cbec1ed7bd40bca9031/libatalk/dsi/dsi_opensess.c)
-
-[Data Stream Interface - Wikipedia](https://en.wikipedia.org/wiki/Data_Stream_Interface)
-
-### Explained attack by author 0xddaa
-
-[Hitcon ctf 2019 pwn 371 netatalk](https://ddaa.tw/hitconctf_pwn_371_netatalk.html)
-
-### Out of bound write
-
-[Exploiting an 18 Year Old Bug](https://medium.com/tenable-techblog/exploiting-an-18-year-old-bug-b47afe54172)
-
-### Others
-
-[HITCON CTF 2019 Quals](https://balsn.tw/ctf_writeup/20191012-hitconctfquals/#netatalk)
-
-[0xddaa/ctf_challenges](https://github.com/0xddaa/ctf_challenges/tree/master/hitcon2019/netatalk)
-
-[struct - Interpret bytes as packed binary data - Python 3.9.5 documentation](https://docs.python.org/3/library/struct.html)
-
-### Đặt break point tại line xx trong file c
-
-[Debugging with GDB - Set Breaks](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_28.html)
-
 # Netatalk là gì?
 
 `Netatalk` là một open-source linux deamon, cung cấp POSIX-compliant *NIX/ * BSD hệ thống có khả năng chia sẻ các tập tin với các máy tính Apple Macintonsh.
@@ -95,9 +64,9 @@ For Ubuntu18.04 (`Linux ubuntu 4.15.0-20-generic #21-Ubuntu SMP Tue Apr 24 06:16
     sudo ss -nap | grep 548
     ```
     
-    ![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled.png)
+    ![imgs/Netatalk//Untitled.png](imgs/Netatalk//Untitled.png)
     
-    ![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%201.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%201.png)
+    ![imgs/Netatalk//Untitled%201.png](imgs/Netatalk//Untitled%201.png)
     
 - Change afp.conf follow challenge gives us
     
@@ -121,9 +90,9 @@ For Ubuntu18.04 (`Linux ubuntu 4.15.0-20-generic #21-Ubuntu SMP Tue Apr 24 06:16
     
 - After start netatalk service, the execute file programming will be placed `/usr/local/sbin`
     
-    ![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%202.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%202.png)
+    ![imgs/Netatalk//Untitled%202.png](imgs/Netatalk//Untitled%202.png)
     
-    ![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%203.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%203.png)
+    ![imgs/Netatalk//Untitled%203.png](imgs/Netatalk//Untitled%203.png)
     
 
 ### Debug afpd
@@ -139,7 +108,7 @@ sudo gdb attach 103712
 
 And then
 
-![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%204.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%204.png)
+![imgs/Netatalk//Untitled%204.png](imgs/Netatalk//Untitled%204.png)
 
 # Code analysis
 
@@ -147,7 +116,7 @@ After search google, I found that bug in `dsi_opensess.c` [link](https://medium.
 
 Source code from `libatalk/dsi/dsi_opensess.c`
 
-![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%205.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%205.png)
+![imgs/Netatalk//Untitled%205.png](imgs/Netatalk//Untitled%205.png)
 
 Tại sao lại có lỗi ở đây? Nếu chúng ta có thể control được `commands` thì khi đó ta có thể ghi đè được các trường sau `attn_quantum` —> heap overflow
 
@@ -157,11 +126,11 @@ Tại sao lại có lỗi ở đây? Nếu chúng ta có thể control được 
 
 Khi một package DSI được gửi đến server, nó sẽ được parser theo một struct sau:
 
-![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%206.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%206.png)
+![imgs/Netatalk//Untitled%206.png](imgs/Netatalk//Untitled%206.png)
 
 Trường `commands` sẽ có một vài giá trị mà client có thể sử dụng để gọi đến những ứng dụng cấp từ server của `netatalk` như bảng dưới đây:
 
-![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%207.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%207.png)
+![imgs/Netatalk//Untitled%207.png](imgs/Netatalk//Untitled%207.png)
 
 Vậy nên, nếu chúng ta request một `dsi package` với `commands==4` thì khi đó trên server `netatalk` sẽ đi vào hàm `dsi_opensession.c`
 
@@ -425,7 +394,7 @@ Theo define:
 
 Debugging
 
-![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%208.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%208.png)
+![imgs/Netatalk//Untitled%208.png](imgs/Netatalk//Untitled%208.png)
 
 Bug & fixbug
 
@@ -472,7 +441,7 @@ tickle = 0,
 
 Thật không may, chúng ta chỉ có OOB write với địa chỉ đã biết, và file `afpd` còn enable `PIE`
 
-![Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%209.png](Netatalk%203567d14f0e2c4e89bdc3f463e195b556/Untitled%209.png)
+![imgs/Netatalk//Untitled%209.png](imgs/Netatalk//Untitled%209.png)
 
 # Stuck in step found address libc -_-
 
@@ -483,3 +452,32 @@ fork() —> memory unchange —> disable ASRL
 [](https://cybersecurity.upv.es/solutions/aslr-ng/ASLRNG-BH-white-paper.pdf?_gclid=5afd2d1c397535.12123939-5afd2d1c3975e5.78570359&_utm_source=xakep&_utm_campaign=mention155231&_utm_medium=inline&_utm_content=lnk879049092195)
 
 Ngâm cứu-ing :<
+
+
+# References
+
+### Some informations about Netatalk
+
+[Netatalk/Netatalk](https://github.com/Netatalk/Netatalk/blob/2e7f3cb25f1f4eb8ee0e5cbec1ed7bd40bca9031/libatalk/dsi/dsi_opensess.c)
+
+[Data Stream Interface - Wikipedia](https://en.wikipedia.org/wiki/Data_Stream_Interface)
+
+### Explained attack by author 0xddaa
+
+[Hitcon ctf 2019 pwn 371 netatalk](https://ddaa.tw/hitconctf_pwn_371_netatalk.html)
+
+### Out of bound write
+
+[Exploiting an 18 Year Old Bug](https://medium.com/tenable-techblog/exploiting-an-18-year-old-bug-b47afe54172)
+
+### Others
+
+[HITCON CTF 2019 Quals](https://balsn.tw/ctf_writeup/20191012-hitconctfquals/#netatalk)
+
+[0xddaa/ctf_challenges](https://github.com/0xddaa/ctf_challenges/tree/master/hitcon2019/netatalk)
+
+[struct - Interpret bytes as packed binary data - Python 3.9.5 documentation](https://docs.python.org/3/library/struct.html)
+
+### Đặt break point tại line xx trong file c
+
+[Debugging with GDB - Set Breaks](https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_28.html)
